@@ -5,13 +5,15 @@ This app was built using React on the front end and data is stored on a backend 
 
 ## Getting Set Up
 
-Getting the server running on your local machine takes only a few steps:
+Getting this app running on your local machine only takes a few steps:
 
 1. Download or clone this repository
 2. Install its dependencies - `npm install`
 3. Start the server - `npm start`
 
 ## Features
+The main features of this app include:
+
 - Organize books on three shelves: Currently Reading, Want to Read, Read
 - Move books from one shelf to another
 - Search for a new book and add it to a shelf
@@ -19,8 +21,4 @@ Getting the server running on your local machine takes only a few steps:
 ## Note
 This app only works with a limited set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md).
 
-## Contributing
 
-We welcome pull requests.
-
-For details on how to contribute, check out [CONTRIBUTING.md](CONTRIBUTING.md).
