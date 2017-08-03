@@ -1,7 +1,7 @@
 ## Introduction
 This is a bookshelf app that allows you to organize your books. You can specify what you have read, what you want to read, and what you are currently reading. There is a search feature to add books in each category/shelf. 
 
-This app was built using React on the front end and data is stored on a backend server accessed by an [API](https://reactnd-books-api.udacity.com). 
+This app was built using React on the front end and data is stored on a backend server accessed by an [API](https://reactnd-books-api.udacity.com). It was built as a project for the Udacity React Nanodegree.
 
 ## Getting Set Up
 
