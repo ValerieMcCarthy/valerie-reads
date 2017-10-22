@@ -5,29 +5,29 @@ import PropTypes from 'prop-types'
 import Book from './Book'
 
 class SearchBooks extends Component {
-	static propTypes = {
-	    searchBooks: PropTypes.func.isRequired,
-	    changeShelfBook: PropTypes.func.isRequired,
-	    books: PropTypes.array.isRequired
-  	}
-  	state = {
-    	query: ''
-  	}
+  static propTypes = {
+	searchBooks: PropTypes.func.isRequired,
+	changeShelfBook: PropTypes.func.isRequired,
+	books: PropTypes.array.isRequired
+  }
+  state = {
+    query: ''
+  }
 
-  	componentDidMount(){
-  		this.props.searchBooks(this.state.query);
-  	}
+  componentDidMount(){
+  	this.props.searchBooks(this.state.query);
+  }
 
-  	updateQuery = (query) => {
-  		this.setState({ query });
-  		this.props.searchBooks(query);
-  	}
+  updateQuery = (query) => {
+  	this.setState({ query });
+  	this.props.searchBooks(query);
+  }
 
-  	render(){
-  		return(
-  			<div className="search-books">
-        		<div className="search-books-bar">
-          			<Link className="close-search" to="/">Close</Link>
+  render(){
+  	return(
+  		<div className="search-books">
+        	<div className="search-books-bar">
+          		<Link className="close-search" to="/">Close</Link>
           			<div className="search-books-input-wrapper">
             {/*
               NOTES: The search from BooksAPI is limited to a small set search terms.
@@ -44,23 +44,23 @@ class SearchBooks extends Component {
               			onChange={(event) => this.updateQuery(event.target.value)}
             		/>
 
-          		</div>
+          			</div>
         	</div>
-        <div className="search-books-results">
-          <ol className="books-grid">
-            {this.props.books.map(book => (
-              <li key={book.id}>
-                <Book
-                  book={book}
-                  changeShelfBook={this.props.changeShelfBook}
-                />
-              </li>
-            ))}
-          </ol>
-        </div>
+        	<div className="search-books-results">
+          		<ol className="books-grid">
+            		{this.props.books.map(book => (
+              		<li key={book.id}>
+	                	<Book
+	                  		book={book}
+	                  		changeShelfBook={this.props.changeShelfBook}
+	                	/>
+              		</li>
+            		))}
+          		</ol>
+        	</div>
       </div>
-  		)
-  	}
+  	)
+  }
 }
 
 
