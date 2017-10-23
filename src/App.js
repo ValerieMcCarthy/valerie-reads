@@ -17,6 +17,8 @@ class BooksApp extends React.Component {
         this.setState({ books });
       })
   }
+
+
   searchBooks = (query) => {
     if(query) {
       BooksAPI.getAll()
@@ -33,11 +35,8 @@ class BooksApp extends React.Component {
               if(books) {
                 books = books.map(book => {
                   const bookAPI = booksAPI.find(bookAPI => bookAPI.id === book.id);
-                  if(bookAPI) {
-                    return bookAPI;
-                  } else {
-                    return book;
-                  }
+                  book.shelf = !!bookAPI ? bookAPI.shelf : 'moveto'
+                  return book;
                 });
                 if(this.state.books !== books) {
                   this.setState({ books });
@@ -49,6 +48,8 @@ class BooksApp extends React.Component {
       this.setState({ books: [] });
     }
   }
+
+
   changeShelfBook = (bookToChange, newShelf) => {
     BooksAPI.update(bookToChange, newShelf)
       .then(data => {
